@@ -1,0 +1,155 @@
+{%extends 'base.html'%}
+{%block content%}
+ <div class="card o-hidden border-0 shadow-lg col-lg-6 my-5  mt-5 m-auto">
+    <div class="card-body mt-5">
+      <!-- Nested Row within Card Body -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="p-5">
+<form class="user" method="POST">
+                {{form.hidden_tag()}}
+                    <div class="form-group">
+                  {{form.grade.label(class="form-control-label text-dark text-sm mb-1")}}
+                  <br>
+                      {%if form.grade.errors%}
+                            {{form.grade(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.grade.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.grade(class="wrap-input100",id="exampleInputText",placeholder="answer...")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                  {{form.subject.label(class="form-control-label text-dark text-sm mb-1")}}
+                  <br>
+                      {%if form.subject.errors%}
+                            {{form.subject(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.subject.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.subject(class="wrap-input100",id="exampleInputText",placeholder="answer...")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                          {{form.question.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.question.errors%}
+                            {{form.question(class="form-control form-control-user is-invalid",id="exampleInputSelect")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.question.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.question(class="form-control ",id="exampleInputSelect")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                          {{form.option_A.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.option_A.errors%}
+                            {{form.option_A(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.option_A.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.option_A(class="form-control",id="exampleInputText",placeholder="Enter Option A...")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                          {{form.option_B.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.option_B.errors%}
+                            {{form.option_B(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.option_B.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.option_B(class="form-control",id="exampleInputText",placeholder="Enter Option B...")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                          {{form.option_C.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.option_C.errors%}
+                            {{form.option_C(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.option_C.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.option_C(class="form-control",id="exampleInputText",placeholder="Enter Option C...")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                          {{form.option_D.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.option_D.errors%}
+                            {{form.option_D(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.option_D.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.option_D(class="form-control",id="exampleInputText",placeholder="Enter Option D...")}}
+                            {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                  {{form.answer.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.answer.errors%}
+                            {{form.answer(class="form-control is-invalid",id="exampleInputText")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.answer.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.answer(class="form-control",id="exampleInputText",placeholder="answer...")}}
+                            {%endif%}
+
+                    </div>
+
+                    <div class="form-group">
+                          {{form.explanation.label(class="form-control-label text-dark text-sm mb-1")}}
+                      {%if form.explanation.errors%}
+                            {{form.explanation(class="form-control form-control-user is-invalid",id="exampleInputSelect")}}
+                            <div class="invalid-feedback">
+                              {%for error in form.explanation.errors%}
+                              <span>{{error}}</span><br />
+                              {%endfor%}
+                            </div>
+                            {%else%}
+                            {{form.explanation(class="form-control ",id="exampleInputSelect")}}
+                            {%endif%}
+
+                    </div>
+
+
+                <button type="submit" class="btn btn-primary  btn-block">
+                  <i class="fa fa-paper-plane"></i>
+                  <b> Add Question</b>
+                </button>
+                <hr>
+
+
+              </form>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+{%endblock content%}
